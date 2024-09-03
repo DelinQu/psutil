@@ -1515,7 +1515,8 @@ def process_iter(attrs=None, ad_value=None):
                 if attrs is not None:
                     proc.info = proc.as_dict(attrs=attrs, ad_value=ad_value)
                 yield proc
-            except NoSuchProcess:
+            # except NoSuchProcess:
+            except Exception:
                 remove(pid)
     finally:
         _pmap = pmap
